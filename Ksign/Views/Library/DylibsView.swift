@@ -114,7 +114,7 @@ struct DylibsView: View {
                     let fileURLs = try fileManager.contentsOfDirectory(at: path, includingPropertiesForKeys: nil)
                     let filtered = fileURLs.filter { url in
                         let ext = url.pathExtension.lowercased()
-                        return ext == "Frameworks folder" || ext == ".app folder"
+                        return ext == "framework" || ext == "dylib"
                     }
                     collectedFiles.append(contentsOf: filtered)
                 } catch {
